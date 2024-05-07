@@ -21,7 +21,7 @@ public class SpringSeecurityAppApplication {
     }
 
     @Bean
-    CommandLineRunner init(UserRepository userRepository) {
+    {
         return args -> {
             /* Create PERMISSIONS */
             PermissionEntity createPermission = PermissionEntity.builder()
@@ -66,8 +66,8 @@ public class SpringSeecurityAppApplication {
                     .build();
 
             /* CREATE USERS */
-            UserEntity userSantiago = UserEntity.builder()
-                    .username("santiago")
+            UserEntity userNicolas = UserEntity.builder()
+                    .username("nicolas")
                     .password("$2a$10$cMY29RPYoIHMJSuwRfoD3eQxU1J5Rww4VnNOUOAEPqCBshkNfrEf6")
                     .isEnabled(true)
                     .accountNoExpired(true)
@@ -76,8 +76,8 @@ public class SpringSeecurityAppApplication {
                     .roles(Set.of(roleAdmin))
                     .build();
 
-            UserEntity userDaniel = UserEntity.builder()
-                    .username("daniel")
+            UserEntity userGabriel = UserEntity.builder()
+                    .username("gabriel")
                     .password("$2a$10$cMY29RPYoIHMJSuwRfoD3eQxU1J5Rww4VnNOUOAEPqCBshkNfrEf6")
                     .isEnabled(true)
                     .accountNoExpired(true)
@@ -86,8 +86,8 @@ public class SpringSeecurityAppApplication {
                     .roles(Set.of(roleUser))
                     .build();
 
-            UserEntity userAndrea = UserEntity.builder()
-                    .username("andrea")
+            UserEntity userAlex = UserEntity.builder()
+                    .username("alex")
                     .password("$2a$10$cMY29RPYoIHMJSuwRfoD3eQxU1J5Rww4VnNOUOAEPqCBshkNfrEf6")
                     .isEnabled(true)
                     .accountNoExpired(true)
@@ -96,8 +96,8 @@ public class SpringSeecurityAppApplication {
                     .roles(Set.of(roleInvited))
                     .build();
 
-            UserEntity userAnyi = UserEntity.builder()
-                    .username("anyi")
+            UserEntity userPepito = UserEntity.builder()
+                    .username("pepito")
                     .password("$2a$10$cMY29RPYoIHMJSuwRfoD3eQxU1J5Rww4VnNOUOAEPqCBshkNfrEf6")
                     .isEnabled(true)
                     .accountNoExpired(true)
@@ -106,7 +106,7 @@ public class SpringSeecurityAppApplication {
                     .roles(Set.of(roleDeveloper))
                     .build();
 
-            userRepository.saveAll(List.of(userSantiago, userDaniel, userAndrea, userAnyi));
+            userRepository.saveAll(List.of(userNicolas, userGabriel, userAlex, userPepito));
         };
     }
 }

@@ -38,14 +38,14 @@ public class SecurityConfig {
                 .httpBasic(Customizer.withDefaults())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(http -> {
-                    // Configurar los endpoints publicos
+                    // Configurar los endpoints que se encuentran publicos
                     http.requestMatchers(HttpMethod.GET, "/auth/get").permitAll();
 
-                    // Cofnigurar los endpoints privados
+                    // Configurar los endpoints que se encuentran privados
                     http.requestMatchers(HttpMethod.POST, "/auth/post").hasAnyRole("ADMIN", "DEVELOPER");
                     http.requestMatchers(HttpMethod.PATCH, "/auth/patch").hasAnyAuthority("REFACTOR");
 
-                    // Configurar el resto de endpoint - NO ESPECIFICADOS
+                    // Configurar el resto de endpoint - que no se encuentran especificados
                     http.anyRequest().denyAll();
                 })
                 .build();

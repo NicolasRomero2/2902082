@@ -8,26 +8,26 @@ public class TestAuthController {
 
     @GetMapping("/get")
     public String helloGet(){
-        return "Hello World - GET";
+        return "Hola mundo - GET";
     }
 
     @PostMapping("/post")
     public String helloPost(){
-        return "Hello World - POST";
+        return "Hola mundo - POST";
     }
 
     @PutMapping("/put")
     public String helloPut(){
-        return "Hello World - PUT";
+        return "Hola mundo - PUT";
     }
 
     @DeleteMapping("/delete")
     public String helloDelete(){
-        return "Hello World - DELETE";
+        return "Hola mundo - DELETE";
     }
 
     @PatchMapping("/patch")
     public String helloPatch(){
-        return "Hello World - PATCH";
+        return "Hola mundo - PATCH";
     }
 }
